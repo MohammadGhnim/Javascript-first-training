@@ -59,3 +59,46 @@ function letterFinder (word, match) {
     }
 }
 letterFinder("test", "t")
+
+/* (1) creating an object with properties and their values: 
+by using the object literal syntax */
+
+var assistantManager = {
+    rangeTilesPerTurn:3,
+    socialSkills: 3,
+    streetSmarts: 30,
+    health: 40,
+    socialAbility: "young and ambitious",
+    greeting: "Let's make some money"
+}
+
+// example: 
+var table = {
+    legs: 3,
+    color: "brown",
+    priceUSD: 100,
+}
+console.log(table);
+console.log(table.color);
+
+// example:
+var hous = {
+    rooms: 3,
+    color: "brown",
+    priceUSD: 10000,
+}
+console.log(hous);
+
+/* (2) building objects with dot notation:
+example: */
+var house2 = {};
+house2.rooms = 4;
+house2.color = "pink";
+house2.priceUSD = 12345;
+console.log(house2);
+// add a new property:
+house2.windows = 10;
+console.log(house2);
+// to upate already existing properties:
+house2.windows = 11;
+console.log(house2);

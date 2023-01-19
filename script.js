@@ -99,6 +99,41 @@ console.log(house2);
 // add a new property:
 house2.windows = 10;
 console.log(house2);
-// to upate already existing properties:
+// to update already existing properties:
 house2.windows = 11;
 console.log(house2);
+
+// (3) building objects using brackets notation:
+var house2 = {};
+house2["rooms"] = 4;
+house2['color']= "pink";
+house2["priceUSD"]= 12345;
+console.log(house2);
+
+// we can access and update properties on objects using a combination of both (dot notation) and (brackets notation)
+var car = {}
+car.color = "red";
+car["color"] = "green";
+car["speed"] = 200;
+car.speed = 100;
+console.log(car);
+
+// space inside property:
+
+car["number of doors"] = 4;
+console.log(car);
+
+// add numbers also:
+car["2022"] = 1901;
+console.log(car);
+
+// bracket notation can evaluate expressions
+var arr0fKeys = ['speed', 'altitude', 'color'];
+var drone = {
+    speed: 100,
+    altitude: 200,
+    color: "red",
+}
+for (var i = 0; i < arr0fKeys.length; i++){
+    console.log(drone[arr0fKeys[i]])
+}

@@ -137,3 +137,38 @@ var drone = {
 for (var i = 0; i < arr0fKeys.length; i++){
     console.log(drone[arr0fKeys[i]])
 }
+
+// to add new items to an array, we can use push() method:
+
+var fruits = [];
+fruits.push("apple");
+fruits.push('pear');
+console.log(fruits);
+// to remove the last items from an array, we can use the pop() method:
+
+fruits.pop();
+console.log(fruits);
+
+// we can build a function that takes all its arguments and pushes them into an array:
+
+function arrayBuilder(one, two, three) {
+    var arr = [];
+    arr.push(one);
+    arr.push(two);
+    arr.push(three);
+    console.log(arr);
+}
+arrayBuilder('apple', 'pear', 'plum');    // ----->>   call the arrBuilder()
+
+/* also, i don't have to console.log the newly built array.
+Instead, i can return it*/
+
+function arrayBuilder(one, two, three) {
+    var arr = [];
+    arr.push(one);
+    arr.push(two);
+    arr.push(three);
+    return arr;
+}
+simpleArr = arrayBuilder('apple', 'pear', 'plum');
+console.log(simpleArr);

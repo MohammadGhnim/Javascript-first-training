@@ -311,7 +311,7 @@ clothes.push("Socks");
 console.log(clothes[2]);
 var favCar = {};
 favCar.color = "black";
-favCar.covertible = 4;
+favCar.covertible = true;
 console.log(favCar);
 
 // We can add new key-value pairs to existing objects using the dot notation and the assignment operator. 
@@ -359,3 +359,26 @@ car.turnTheKey();
 car.lightsOn();
 
 //  to run it, I need to append an opening and a closing parenthesis so that the JavaScript engine can process my JavaScript code. 
+
+
+// using Typeof:
+
+// var test = typeof('what is this?');        // run ---> string
+
+// var test = typeof(10);                   // run ---> number
+
+// var test = typeof(3.14);                // run ---> number
+
+// var test = typeof(true);               // run ---> bolean
+
+// var test = typeof(false);            // run ---> bolean
+
+// var test = typeof(1 < 2);           // run ---> bolean
+
+// var test = typeof([1,2,3]);        // run ---> object
+
+// var test = typeof({ firstProperty: 1 });    // run ---> object
+
+// var test = typeof(function abc(){ console.log('abc'); });      // run ---> function
+
+console.log(test);

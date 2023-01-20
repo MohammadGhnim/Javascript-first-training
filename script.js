@@ -255,3 +255,28 @@ var user = 'Lisa';
 
 console.log(greet + user);            //Hello Lisa
 console.log(greet.concat(user));     //Hello Lisa
+
+//example:
+var greet = "Hello, ";
+var place = "world";
+
+greet.length;     // 7
+// charAt() to read each individual character at a specific index in a string, starting from zero
+greet.charAt(0);  // 'H'
+
+// concat() method joins two strings:
+"wo".concat("rl").concat("d");     // 'world'
+
+// The indexOf returns the location of the first position that matches a character:
+"ho-ho-ho".indexOf('h');    // 0
+"ho-ho-ho".indexOf('o');    // 1
+"ho-ho-ho".indexOf('-');    // 2
+
+// The lastIndexOf finds the last match, otherwise it works the same as indexOf.
+
+// The split method chops up the string into an array of sub-strings:
+"ho-ho-ho".split("-");     // ['ho', 'ho', 'ho']
+
+// to change the casing of strings:
+greet.toUpperCase();       // "HELLO, "
+greet.toLowerCase();       // "hello, "

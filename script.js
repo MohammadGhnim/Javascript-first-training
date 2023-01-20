@@ -313,3 +313,49 @@ var favCar = {};
 favCar.color = "black";
 favCar.covertible = 4;
 console.log(favCar);
+
+// We can add new key-value pairs to existing objects using the dot notation and the assignment operator. 
+var car = {};
+car.color = "red";      // update the value of a property of the car object
+
+//add a method to the car object so that it can be called as car.turnkey()
+car.turnKey = function(){
+    console.log('engine running');
+}
+
+// I'll build a new object literally named car. I type var, space, car, space, equal sign, space, followed by a set of curly braces, and finally a semicolon.
+var car = {};
+car.mileage = 98765;
+car.color = "red";
+console.log(car);
+// now I've added two properties to my object.
+
+//  I want to add a method to my car object.
+
+var car = {};
+car.mileage = 98765;
+car.color = "red";
+console.log(car);
+car.turnTheKey = function() {
+    console.log("The engine is running")
+}
+console.log(car);
+// I begin by typing car dot turnTheKey, equals, and then I type the code for my function. So function, open-close parentheses. Then the two curly braces where I will place my code. Finally, inside the curly braces, I type the console dot log followed by the message "The engine is running".
+
+
+// example of adding properties and methods to an object
+var car = {};
+car.mileage = 98765;
+car.color ="red";
+console.log(car);
+car.turnTheKey = function() {
+    console.log("The engine is running")
+}
+car.lightsOn = function() {
+    console.log("the lights are on.")
+}
+console.log(car);
+car.turnTheKey();
+car.lightsOn();
+
+//  to run it, I need to append an opening and a closing parenthesis so that the JavaScript engine can process my JavaScript code. 

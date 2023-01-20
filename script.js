@@ -172,3 +172,19 @@ function arrayBuilder(one, two, three) {
 }
 simpleArr = arrayBuilder('apple', 'pear', 'plum');
 console.log(simpleArr);
+
+
+// Math.random()
+
+// generate a decimal number between 0 and 0.99
+Math.random();
+
+// save it to a variable:
+var decimal = Math.random();
+
+// log the value of decimal to the console 
+console.log(decimal);
+
+// log the value of decimal MUTIPLIED BY 10
+console.log(decimal * 10);
+

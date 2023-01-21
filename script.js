@@ -363,22 +363,51 @@ car.lightsOn();
 
 // using Typeof:
 
-// var test = typeof('what is this?');        // run ---> string
+// var test = typeof('what is this?');                            // run ---> string
 
-// var test = typeof(10);                   // run ---> number
+// var test = typeof(10);                                         // run ---> number
 
-// var test = typeof(3.14);                // run ---> number
+// var test = typeof(3.14);                                       // run ---> number
 
-// var test = typeof(true);               // run ---> bolean
+// var test = typeof(true);                                       // run ---> bolean
 
-// var test = typeof(false);            // run ---> bolean
+// var test = typeof(false);                                      // run ---> bolean
 
-// var test = typeof(1 < 2);           // run ---> bolean
+// var test = typeof(1 < 2);                                      // run ---> bolean
 
-// var test = typeof([1,2,3]);        // run ---> object
+// var test = typeof([1,2,3]);                                    // run ---> object
 
-// var test = typeof({ firstProperty: 1 });    // run ---> object
+// var test = typeof({ firstProperty: 1 });                       // run ---> object
 
 // var test = typeof(function abc(){ console.log('abc'); });      // run ---> function
 
 console.log(test);
+
+
+// Bugs and Errors:
+
+function addNums(a, b) {
+    console.log(a + b);
+}
+addNums(1, 2);                                                   // ----> 1 + 2 = 3   
+console.log("Still running");                                    // ----> 3 and Still running
+
+function addNums(a, b) {
+    console.log(a + b);
+}
+
+// 1- Bug:
+addNums("1", 2);                                         // [("1") = String, (+) = Add, (2) = Number], the result will be = "12" ---> String  (concatenation)
+console.log("Still running");                            // ---->  12 and Still running     "This is a Bug"
+
+// 2- Error:
+console.log(c + d);                                      // console: ReferenceError: c is not defined
+console.log('This line never runs');                     // Does not excute
+
+// Types of error: 1- Syntax Error   2- Type Error   3- Reference Error
+
+/*  var word = "hello;  ----> Syntax Error
+    console: SyntaxError: Invalid or unexpected token
+
+    (5).pop; ----> Type Error 
+    console: Type Error: 5.pop is not a function    */

@@ -469,3 +469,46 @@ console.log('My programm does not stop');
 .
 There was a Reference error
 My programm does not stop */
+
+
+/* Most common errors:
+1- ReferenceError
+2- SyntaxError
+3- TypeError
+4- RangeError
+other error includes:
+!- aggregateError
+2- Error
+3- InternalError
+4- URIError
+
+1- ReferenceError:
+one tries to use variables that haven't been declared anywhere.
+
+example:
+console.log(username);
+----> Uncaught ReferenceError: username is not defined
+
+2- SyntaxError:
+Any kind of invalid JavaScript code will cause a SyntaxError.
+
+example:
+var a "there's no assignment operator here";
+---- > SyntaxError: Unexpected string
+
+3- TypeError:
+trying to run a method on a non-supported data type.
+
+example:
+"hello".pop()
+----> TypeError: "hello".pop is not a function
+
+4- RangeError:
+when we're giving a value to a function, but that value is out of the allowed range of acceptable input values.
+
+example:
+(10).toString(2);
+----> '1010'
+
+(10).toString(100);
+----> RangeError: toString() radix argument must be between 2 and 36 */

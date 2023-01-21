@@ -411,3 +411,61 @@ console.log('This line never runs');                     // Does not excute
 
     (5).pop; ----> Type Error 
     console: Type Error: 5.pop is not a function    */
+// Error handling: 
+// 1- catch
+try {
+    console.log(c + d)
+} catch(err) {
+    console.log(err)
+}   
+console.log('This line now runs');
+//----> Console: This line now runs                      
+// 2- throw
+try {
+    throw new error();
+} catch(err) {
+    console.log(err)
+}
+console.log('This line now runs');
+// ---->  ReferenceError: This line now runs
+
+// example:
+console.log(a + b);
+console.log("This line is never reached")
+// -----> Console: ReferenceError: c is not defined
+
+
+throw new ReferenceError();
+// ----> console: ReferenceError
+
+try {
+    console.log(a + b)
+} catch(err) {
+    console.log(err)
+    console.log('There was an error')
+    console.log('the error was saved in the error log')
+}   
+console.log('My programm does not stop');
+/* ----> ReferenceError: a is not defined
+.
+.
+.
+There was an error
+the error was saved in the error log
+My programm does not stop */
+
+// example:
+try {
+    throw new ReferenceError();
+} catch(err) {
+    console.log(err)
+    console.log('There was a Reference error')
+}   
+console.log('My programm does not stop');
+
+/* ----> console: ReferenceError
+.
+.
+.
+There was a Reference error
+My programm does not stop */

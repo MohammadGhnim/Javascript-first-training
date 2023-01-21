@@ -512,3 +512,36 @@ example:
 
 (10).toString(100);
 ----> RangeError: toString() radix argument must be between 2 and 36 */
+
+/* Undefined, null and empty values
+1- Null datatype: 
+var letters = 'abc';
+letters.match(/a/);
+----> console: ['a', index:o, input:'abc', groups: undefined]
+
+var letters = 'abc';
+letters.match(/d/);
+----> console: null 
+
+var noise;
+console.log(noise);
+----> console: undefined
+
+noise = 'thunder';
+console.log(noise);
+----> console: thunder
+
+var food;
+console.log(food);
+----> console: undefined
+
+var game = {
+    score: 1000
+}
+
+game.Score;
+----> console: undefind   (s,S)
+
+3- empty strings:
+var name1 = '';
+var name2 = "";          */

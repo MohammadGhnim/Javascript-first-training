@@ -20,7 +20,7 @@ console.log("Hello " + "there, " + "World");
 console.log("Hello ", "there, ", "World");
 // Hello  there,  World
 
-/* Exercise: Declaring variables
+/*  --------------------------        Exercise: Declaring variables     ------------------------------
 Tasks
 1- Declare a new variable named petDog and give it the name Rex.*/
 var petDog = "Rex";
@@ -77,6 +77,17 @@ var catSound = "meow";
 console.log(petCat, "now says", catSound);
 // ----> Pepper now says meow
 
+// --------------------------------------------------------------------------------*******************-------------------------------------------------------------
+
+/*      -----------------------------                 Data Types:               --------------------------------------------
+1- String      "Hello World"
+2- Number      3456
+3- Boolean     a- True   b- False
+4- Null        Absence of a value 
+5- Undefind    unassigned Value
+6- BigInt      very large range of numbers (2^53)
+7- Symbol      unique identifier
+        */
 
 
 function listArrayItems(arr){
@@ -107,7 +118,8 @@ function listArrayItems(arr) {
     }
 }
 
-/* Exercise: 
+/*   ---------------------------------------                Exercise:        -------------------------------------
+
 Task 1:
 Write a function named letterFinder that accepts two parameters: word and match.
 

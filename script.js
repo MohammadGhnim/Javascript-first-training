@@ -1,4 +1,4 @@
-/* Comments in JavaScript:
+/*   --------------------------            Comments in JavaScript:                -----------------------------------
 1- Single-line comments               // this is a comment!
 
 2- Multi-line comments                  /*
@@ -20,7 +20,7 @@ console.log("Hello " + "there, " + "World");
 console.log("Hello ", "there, ", "World");
 // Hello  there,  World
 
-/*  --------------------------        Exercise: Declaring variables     ------------------------------
+/*  --------------------------             Exercise: Declaring variables           ------------------------------
 Tasks
 1- Declare a new variable named petDog and give it the name Rex.*/
 var petDog = "Rex";
@@ -87,7 +87,9 @@ console.log(petCat, "now says", catSound);
 5- Undefind    unassigned Value
 6- BigInt      very large range of numbers (2^53)
 7- Symbol      unique identifier
-        */
+*/
+// --------------------------------------------------------------------------------*******************--------------------------------------------------------------
+// ----------------------------                     Operators                   ---------------------------------------------
 
 
 function listArrayItems(arr){
@@ -727,3 +729,38 @@ function addTwoNums(a,b) {
 }
 addTwoNums(5, "5")
 console.log("It still works")
+
+
+/* 
+Programming Paradigms:     
+1- Functional Programming(FP)  
+There is a clear distinction between data and functions in functional programming as data can exist outside of functions.
+*/
+
+var shoes = 100; 
+var stateTax = 1.1;
+function totalPrice(price, tax) {
+    return price * tax;
+}
+var toPay = totalPrice(shoes, stateTax);
+console.log(toPay);
+// ----> 110.00000000000001
+
+var currencyOne = 100;
+var currencyTwo = 0;
+var exchangeRate = 1.2;
+function convertCurrency(amount, rate) {
+    return amount * rate;
+}
+
+currencyTwo = convertCurrency(currencyOne, exchangeRate);
+
+console.log(currencyTwo);
+// ----> 120
+
+
+/*2- Object-oriented programming (oop)
+you combine both data and functions into objects.
+*/
+
+

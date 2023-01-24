@@ -1,3 +1,84 @@
+/* Comments in JavaScript:
+1- Single-line comments               // this is a comment!
+
+2- Multi-line comments                  /*
+                                        this
+                                        is
+                                        a
+                                        multi-line
+                                        comment
+                                        */
+console.log("Hello, World");
+// ----> Hello, world
+
+console.log("%cHello, World", "color: blue; font-size: 40px");
+// ----> the color of the letters will be blue, and the font size will be 40px. 
+
+console.log("Hello " + "there, " + "World");
+// Hello there, World
+
+console.log("Hello ", "there, ", "World");
+// Hello  there,  World
+
+/* Exercise: Declaring variables
+Tasks
+1- Declare a new variable named petDog and give it the name Rex.*/
+var petDog = "Rex";
+
+// 2- Declare a new variable named petCat and give it the name Pepper.
+var petCat = "Pepper";
+
+// 3- Console.log the petDog variable.
+var petDog = 'Rex'; 
+console.log(petDog);
+//----> Rex
+
+// 4- Console.log the petCat variable.
+var petCat = 'Pepper'; 
+console.log(petCat);
+// ----> Pepper
+
+// 5- Console.log the text "My pet dog's name is: " and the petDog variable.
+var petDog = 'Rex'; 
+console.log("My pet dog's name is: " + petDog);
+// My pet dog's name is: Rex
+
+// 6- Console.log the text "My pet cat's name is: " and the petCat variable.
+var petCat = 'Pepper'; 
+console.log("My pet cat's name is: " + petCat);
+// ----> My pet cat's name is: Pepper
+
+// 7- Declare another variable and name it catSound. Assign the string of "purr" to it.
+var catSound = "purr";
+
+// 8- Declare another variable and name it dogSound. Assign the string of "woof" to it.
+var dogSound = "woof";
+
+// 9- Console.log the variable petDog, then the string "says", then the variable dogSound.
+var petDog = 'Rex'; 
+var dogSound = "woof"; 
+console.log(petDog, "says", dogSound);
+// ----> Rex says woof
+
+// 10- Console.log the variable petCat, then the string "says", then the variable catSound.
+var petCat = 'Pepper'; 
+var catSound = "purr"; 
+console.log(petCat, "says", catSound);
+// ----> Pepper says purr
+
+// 11- Reassign the value stored in catSound to the string "meow".
+var catSound = "purr"; // Task 7 solution
+catSound = "meow";
+
+
+// 12- Console.log the variable petCat, then the string "now says", then the variable catSound.
+var petCat = 'Pepper'; 
+var catSound = "meow"; 
+console.log(petCat, "now says", catSound);
+// ----> Pepper now says meow
+
+
+
 function listArrayItems(arr){
     for (var i = 0; i < arr.length; i++){
         console.log(i, arr[i])

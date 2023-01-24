@@ -764,3 +764,43 @@ you combine both data and functions into objects.
 */
 
 
+//           ---------------------------------------------------------------------------------------------------------------------------------------
+/* -----------------------------             Return value from Functions            ---------------------------
+by default: */
+console.log('Hello');
+//----> Hello (undefined)
+
+function consoleLog(val) {
+    console.log(val)
+    return val
+}
+console.log('Hello');
+//----> Hello ('Hello')
+
+
+//example:
+// I'll first code a function that returns a double of a number that it received:
+function doubleIt(num) {
+    return num * 2
+}
+
+// Now I'll code another function that builds an object with a specific value:
+function objectMaker(val) {
+    return {
+        prop: val
+    }
+}
+
+// I can call the objectMaker() function with any value I like, such as:
+objectMaker(20);
+
+// The returned value will be an object with a single prop key set to 20:
+//----> {prop:20}
+
+//Now consider this code:
+doubleIt(10).toString()
+// ---> The above code returns the number 20 as a string, that is: "20".
+
+// I can even combine my custom function calls as follows:
+objectMaker( doubleIt(100) );
+// This will now return the following value: -----> {prop: 200}

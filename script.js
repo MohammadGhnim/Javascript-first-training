@@ -737,12 +737,12 @@ Programming Paradigms:
 There is a clear distinction between data and functions in functional programming as data can exist outside of functions.
 */
 
-var shoes = 100; 
+var shoes = 100;                                           //---->Data
 var stateTax = 1.1;
-function totalPrice(price, tax) {
-    return price * tax;
+function totalPrice(price, tax) {                          //---->Function
+    return price * tax;                                    //---->Returns value
 }
-var toPay = totalPrice(shoes, stateTax);
+var toPay = totalPrice(shoes, stateTax);                   //---->Arguments
 console.log(toPay);
 // ----> 110.00000000000001
 

@@ -841,4 +841,37 @@ example();
         2
         1
 */
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------                  Scope               -----------------------------------
 
+var num1 = 10;                          //-----> global scope
+function score(){                       //-----> local scope  
+    console.log(num1);
+}
+score();
+//----> 10
+
+
+/*scope types:
+1- local
+2- global 
+*/  
+
+
+var num1 = 10;                          //-----> global scope
+
+
+function score(){      
+    var num2 = 20;                     //-----> local scope  
+    console.log(num2);
+}
+
+
+var globalVar = "I'm in the global scope";
+
+function scopeTest() {
+    var localVar = " I'm scoped to the function";
+    console.log(globalVar);
+}
+
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------------

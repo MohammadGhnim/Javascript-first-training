@@ -730,7 +730,7 @@ function addTwoNums(a,b) {
 addTwoNums(5, "5")
 console.log("It still works")
 
-
+//------------------------------------------------------------------------------------------------------------------------------------------------------
 /* 
 Programming Paradigms:     
 1- Functional Programming(FP)  
@@ -764,7 +764,7 @@ you combine both data and functions into objects.
 */
 
 
-//           ---------------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
 /* -----------------------------             Return value from Functions            ---------------------------
 by default: */
 console.log('Hello');
@@ -804,3 +804,41 @@ doubleIt(10).toString()
 // I can even combine my custom function calls as follows:
 objectMaker( doubleIt(100) );
 // This will now return the following value: -----> {prop: 200}
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------
+//        ----------------------------                     Function calling and recursion                -----------------------------
+
+function example(){
+    console.log('line one');
+    console.log('line two');
+    console.log('line three');
+}
+//----> undefined
+
+function example(){
+    console.log('line one');
+    console.log('line two');
+    console.log('line three');
+}
+
+example()
+/* ---->line one
+        line two
+        line three
+*/
+
+let counter = 3;
+function example() {
+    console.log(counter);
+    counter = counter - 1;
+    if (counter === 0) return;
+    example();
+}
+// ----> undefined
+//then:
+example();
+/*----> 3
+        2
+        1
+*/
+

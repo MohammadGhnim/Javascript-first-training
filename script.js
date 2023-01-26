@@ -1023,3 +1023,62 @@ This includes:
 
 3- calling Math.random() - since the value cannot be reliably repeated 
 */
+
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------
+// --------------------------------                   scoping                     -----------------------------------------
+var num1 = 10;                                  //---> Global scope
+
+function score() {                              // Local scope
+    var num2 = 20;
+    console.log(num2); 
+}
+//----> 20
+
+
+let color ='red';                     // global scope
+
+if (color == 'red') {                 // Block scope Curly Braces)   Two separate variables with the same name 
+    let color == 'blue';                 
+}
+console.log(color);  // red
+
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------                    comparing var, let and const                        ---------------------------------------------------
+
+
+// var keyword
+
+// 1- we can access a var variable before initialization ...
+        // .... as long as the var variable is eventualy initialized
+        // .... anywhere in our code 
+        // console.log(user);
+
+// 2- we can declare and redeclare the same var variable without errors
+//var user = "Mary";
+//var user = "Joanna";
+//var user = "Mark";
+
+//console.log(user);       ----> Mark
+
+
+/*
+let keyword
+
+1- we cannot access a let variable before we declare it
+2- we can declare an unassigned variable with let 
+3- we  can't redeclare a let variable 
+4- but we can re-assign it
+*/
+
+/*
+const keyword
+
+1- the const variable must be initialized 
+2- we can't access the const variable before initialization
+3- we can't redeclare a const variable
+
+
+
+                                var                  let                         const
+                Lenient <-------------------------------------------------------------------->  Strict
+*/

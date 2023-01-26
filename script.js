@@ -1082,3 +1082,115 @@ const keyword
                                 var                  let                         const
                 Lenient <-------------------------------------------------------------------->  Strict
 */
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------                    Object-oriented-programming                         ----------------------------------------------
+
+// group data = (oop)
+// seoarate data = (fp)
+
+
+// Object-oriented programming:
+var purchase1 = {                                                              //---> object
+    shoes: 100,
+    stateTax:1.2,
+    totalPrice: function() {                                                   //---> Method  
+        var calculation = purchse1.shoes * purchse1.stateTax;
+        console.log('Total price:', calculation);
+    }
+}
+purchase1.totalPrice();    // 120
+purchase1.shoesPrice;      // 100
+purchase1.stateTax;        // 1.2
+
+var purchase2 = {
+    shoes: 50,
+    stateTax: 1.2,
+    totalPrice: function() {
+        var calculation = purchase2.shoes * purchase2.stateTax;
+        console.log('Total price:', calculation);
+    }
+}
+
+purchase2.totalPrice();    // 60
+
+
+var purchase1 = {
+    shoes: 100,
+    stateTax: 1.2,
+    totalPrice: function() {
+        var calculation = this.shoes * this.stateTax;
+        console.log('Total price:', calculation);
+    }
+}
+purchase1.totalPrice();    // 120
+
+
+// examples:
+// 1- functional programming
+
+var shoes = 100;
+var stateTax = 1.2;
+function totalPrice(shoes, tax) {
+    return shoes * tax;
+}
+
+var toPay = totalPrice(shoes, stateTax);
+
+console.log(toPay);
+// ----> 120
+
+
+
+// 2- object-oriented programming
+// 1)
+var purchase1 = {
+    shoes: 100,
+    stateTax: 1.2,
+    totalPrice: function() {
+        var calculation = purchase1.shoes * purchase1.stateTax;
+        console.log('Total price:', calculation);
+    }
+}
+purchase1.totalPrice();    
+//-----> Total price: 120
+
+// 2)
+var purchase2 = {
+    shoes: 50,
+    stateTax: 1.2,
+    totalPrice: function() {
+        var calculation = purchase2.shoes * purchase2.stateTax;
+        console.log('total price:', calculation);
+    }
+}
+purchase2.totalPrice();
+//  ----> total price: 60
+
+// 3)
+var purchase1 = {
+    shoes: 100,
+    stateTax: 1.2,
+    totalPrice: function() {
+        var calculation = this.shoes * this.stateTax;
+        console.log('Total price:', calculation);
+    }
+}
+purchase1.totalPrice();   
+
+var purchase2 = {
+    shoes: 50,
+    stateTax: 1.2,
+    totalPrice: function() {
+        var calculation = this.shoes * this.stateTax;
+        console.log('Total price:', calculation);
+    }
+}
+purchase2.totalPrice();
+
+/* Total price: 120
+   Total price: 60 */
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------

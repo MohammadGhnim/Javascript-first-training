@@ -875,3 +875,151 @@ function scopeTest() {
 }
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ------------------------                           The functional programming paradigm                      -----------------------------------------------------
+
+/* functional programming (FP)
+example:
+we use a lot of functions and variables:
+*/
+function getTotal(a,b) {
+    return a + b
+}
+var num1 = 2;
+var num2 = 3;
+
+var total = getTotal(num1 + num2);
+
+// we keep data and functionality separate and pass data into functions only when we want something computed:
+function getDistance(mph, h){
+    return mph * h
+}
+var mp = 60,
+var h = 2;
+var distance = getDistance(mph, h);
+
+// functions return new values and then use those values somewhere else in the code:
+function getDistance(mph, h) {
+    return mph * h
+}
+var mph = 60;
+var h = 2;
+var distance = getDistance(mph, h);
+
+console.log(distance);
+// ----> 120
+
+
+/* object-oriented programming (OOP)
+we group data and functionality as properties and methods inside objects. 
+
+For example, if I have a virtualPet object, I can give it a sleepy property and a nap() method:
+*/
+var virtualPet = {
+    sleepy: true,
+    nap: function() {}
+}
+
+// In OOP, methods update properties stored in the object instead of generating new return values.
+// creating an Object:
+var virtualPet = {
+    sleepy: true,
+    nap: function() {
+        this.sleepy = false
+    }
+}
+console.log(virtualPet.sleepy)
+// ----> true
+
+var virtualPet = {
+    sleepy:true,
+    nap: function() {
+        this.sleepy = false
+    }
+}
+virtualPet.nap()
+console.log(virtualPet.sleepy);
+// ----> false
+
+
+/* Functional Programming (OP) paradigm works by keeping the data and functionality separate. 
+    OOP, works by keeping the data and functionality grouped in meaningful objects. 
+    يعمل نموذج البرمجة الوظيفية عن طريق إبقاء البيانات والوظائف منفصلة.
+    البرمجة الموجهة للكائنات ، تعمل عن طريق الحفاظ على البيانات والوظائف مجمعة في كائنات ذات معنى.
+
+First-class functions:
+It means that a function in JavaScript is just another value that we can:
+
+a) pass to other functions
+
+b) save in a variable
+
+c) return from other functions
+
+*/
+function addTwoNums(a, b) {
+    console.log(a + b);
+}
+
+function randomNum() {
+    return Math.floor((Math.random() * 10) + 1);
+}
+function specificNum() { return 42 };
+
+var useRandom = true;
+
+var getNum;
+
+if(useRandom) {
+    getNumber = randomNum
+} else {
+    getNumber = specificNum
+}
+
+addTwoNums(getNumber(), getNumber())
+// ----> 16
+
+/*Higher-order functions
+
+A higher-order function is a function that has either one or both of the following characteristics:
+
+a) It accepts other functions as arguments
+
+b) It returns functions when invoked  */
+function addTwoNums(getNumber1, getNumber2) {
+    console.log(getNumber1()+ getNumber2());
+}
+
+addTwoNums(specificNum, specificNum);
+// ----> 84
+
+function addTwoNums(getNumber1, getNumber2) {
+    console.log(getNumber1()+ getNumber2());
+}
+
+addTwoNums(specificNum, randomNum);
+// ----> returned number is 42 + some random number 
+// ----> 47 with me
+
+
+/* Pure functions and side-effects:
+A pure function returns the exact same result as long as it's given the same values.
+ */
+function addTwoNums(a, b) {
+    console.log(a + b);
+}
+addTwoNums(5, 6);
+// ----> 11
+
+/* 
+Another rule for a function to be considered pure is that it should not have side-effects. 
+A side-effect is any instance where a function makes a change outside of itself.
+
+This includes: 
+
+1- changing variable values outside of the function itself, or even relying on outside variables 
+
+2- calling a Browser API (even the console itself!) 
+
+3- calling Math.random() - since the value cannot be reliably repeated 
+*/

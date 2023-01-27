@@ -2147,3 +2147,156 @@ PI === Math.PI;
 //----> false
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------                             For of loops and objects                           ----------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// To begin, it's important to know that a for of loop cannot work on an object directly, since an object is not iterable. For example:
+const car = {
+    speed: 100,
+    color: "blue"
+}
+
+for(prop of car) {
+    console.log(prop)
+}
+//----> Uncaught TypeError: car is not iterable
+
+
+// Contrary to objects, arrays are iterable. For example:  
+const colors = ['red','orange','yellow']
+for (var color of colors) {
+    console.log(color);
+}
+/*
+----> red
+----> orange
+----> yellow
+*/
+
+
+// Built-in methods
+// 1- The Object.keys() method
+const car2 = {
+    speed: 200,
+    color: "red"
+}
+console.log(Object.keys(car2)); 
+//----> ['speed','color']
+
+
+// 2- The Object.values() method
+const car3 = {
+    speed: 300,
+    color: "yellow"
+}
+console.log(Object.values(car3)); 
+//----> [300, 'yellow']
+
+// 3- The Object.entries() method
+const car4 = {
+    speed: 400,
+    color: 'magenta'
+}
+console.log(Object.entries(car4));
+//----> [ ['speed', 400], ['color', 'magenta'] ]
+
+
+/*
+This time, the values that get returned are 2-member arrays nested inside an array. 
+In other words, you get an array of arrays, where each array item has two members, 
+the first being a property's key, and the second being a property's value.
+*/
+
+// Examples
+var clothingItem = {
+    price: 50,
+    color: 'beige',
+    material: 'cotton',
+    season: 'autumn'
+}
+
+for( key of Object.keys(clothingItem) ) {
+    console.log(keys, ":", clothingItem[key])
+}
+
+
+
+function testBracketsDynamicAccess() {
+    var dynamicKey;
+    if(Math.random() > 0.5) {
+        dynamicKey = "speed";
+    }else{
+        dynamicKey = "color";
+    }
+
+    var drone = {
+        speed: 15,
+        color: "orange"
+    }
+
+    console.log(drone[dynamicKey]);
+}
+testBracketsDynamicAccess();
+//----> 15
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------                                 For- of loops and objects                                 -----------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+const car = {
+    engine: true,
+    steering: true,
+    speed: "slow"
+}
+const sportsCar = Object.create(car);
+sportsCar.speed = "fast";
+console.log("The sportsCar object: ", sportsCar);
+
+console.log('----- for-in is unreliable -----');
+for (prop in sportsCar) {
+    console.log(prop);
+}
+console.log("Iterating over object AND its prototype!");
+
+console.log('----- for-of is reliable -----');
+for (prop of Object.keys(sportsCar)) {
+    console.log(prop + ": " + sportsCar[prop]);
+}
+console.log("Iterating over object's OWN PROPERTIES only!");
+/* ---->
+The sportsCar object:  { speed: 'fast' }
+----- for-in is unreliable -----
+speed
+engine
+steering
+Iterating over object AND its prototype!
+----- for-of is reliable -----
+speed: fast
+Iterating over object's OWN PROPERTIES only!
+*/
+
+
+
+const car = {
+    engine: true
+}
+const sportsCar = Object.create(car);
+sportsCar.speed = "fast";
+console.log("The sportsCar object: ", sportsCar);
+
+for (prop in sportsCar) {
+    console.log('H',prop);
+}
+
+for (prop of Object.keys(sportsCar)) {
+    console.log('G', prop + ": " + sportsCar[prop]);
+}
+/*---->
+The sportsCar object:  { speed: 'fast' }
+H speed
+H engine
+G speed: fast
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/

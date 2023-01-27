@@ -1422,3 +1422,244 @@ console.log("penguin1 can fly: ", penguin1.canFly);
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------                   Creating classes                  ---------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//  Train class.
+class Train {
+    constructor() {                   // The constructor will be used to build properties on the future object instance of the Train class.
+        this.color = color;            // This here: It's the future object instance of the Train class.
+        this.lightsOn = lightsOn;
+    }
+}
+
+new Train()                            // Inside the parentheses, you need to pass values such as "red" and false, for example, meaning that the color property is set to "red" and the lightsOn property is set to false.
+
+// we need to assign it to a variable.
+var myFirstTrain = new Train('red', false);
+console.log(myFirstTrain); // Train {color: 'red', lightsOn: false}
+var mySecondTrain = new Train('blue', false);
+var myThirdTrain = new Train('blue', false);
+
+//You can also add methods to classes
+class Train {
+    constructor(color, lightsOn) {
+        this.color = color;
+        this.lightsOn = lightsOn;
+    }
+    toggleLights() {
+        this.lightsOn = !this.lightsOn;
+    }
+    lightsStatus() {
+        console.log('Lights on?', this.lightsOn);
+    }
+    getSelf() {
+        console.log(this);
+    }
+    getPrototype() {
+        var proto = Object.getPrototypeOf(this);
+        console.log(proto);
+    }
+}
+
+/*
+1- The toggleLights method uses the logical not operator, !. 
+This operator will change the value stored in the lightsOn property of the future instance object of the Train class; 
+hence the !this.lightsOn. And the = operator to its left means that it will get assigned to this.lightsOn, 
+meaning that it will become the new value of the lightsOn property on that given instance object.
+
+2- The lightsStatus() method on the Train class just reports the current status of the lightsOn variable of a given object instance.
+
+3- The getSelf() method prints out the properties on the object instance it is called on.
+
+4- The getPrototype() console logs the prototype of the object instance of the Train class. 
+The prototype holds all the properties shared by all the object instances of the Train class. 
+To get the prototype, you'll be using JavaScript's built-in Object.getPrototypeOf() method, and passing it this object - 
+meaning, the object instance inside of which this method is invoked.
+
+Now you can build a brand new train using this updated Train class:
+*/
+var train4 = new Train('red', false);
+
+
+//And now, you can run each of its methods, one after the other, to confirm their behavior:
+train4.toggleLights(); // undefined
+train4.lightsStatus(); // Lights on? true
+train4.getSelf(); // Train {color: 'red', lightsOn: true}
+train4.getPrototype(); // {constructor: f, toggleLights: f, ligthsStatus: f, getSelf: f, getPrototype: f}
+
+class HighSpeedTrain extends Train {
+    constructor(passengers, highSpeedOn, color, lightsOn) {
+        super(color, lightsOn);
+        this.passengers = passengers;
+        this.highSpeedOn = highSpeedOn;
+    }
+}
+// In JavaScript classes, super is used to specify what property gets inherited from the super-class in the sub-class.
+
+// Now let's add another method that will be specific to the HighSpeedTrain class: the toggleHighSpeed() method.
+class HighSpeedTrain extends Train {
+    constructor(passengers, highSpeedOn, color, lightsOn) {
+        super(color, lightsOn);
+        this.passengers = passengers;
+        this.highSpeedOn = highSpeedOn;
+    }
+    toggleHighSpeed() {
+        this.highSpeedOn = !this.highSpeedOn;
+        console.log('High speed status:', this.highSpeedOn);
+    }
+}
+
+/*
+Additionally, imagine you realized that you don't like how the toggleLights() method from the super-class works, 
+and you want to implement it a bit differently in the sub-class. You can add it inside the HighSpeedTrain class. 
+*/
+class HighSpeedTrain extends Train {
+    constructor(passengers, highSpeedOn, color, lightsOn) {
+        super(color, lightsOn);
+        this.passengers = passengers;
+        this.highSpeedOn = highSpeedOn;
+    }
+    toggleHighSpeed() {
+        this.highSpeedOn = !this.highSpeedOn;
+        console.log('High speed status:', this.highSpeedOn);
+    }
+    toggleLights() {
+        super.toggleLigths();
+        super.lightsStatus();
+        console.log('Lights are 100% operational.');
+    }
+}
+
+// Well in the super-class, the toggleLights() method was defined as follows:
+toggleLights() {
+    this.lightsOn = !this.lightsOn;
+}
+
+// Finally, you also add the third line in the re-implemented toggleLights() method, namely:
+console.log('Lights are 100% operational.');
+
+// Now you're ready to build some train objects.
+var train5 = new Train('blue', false);
+var highSpeed1 = new HighSpeedTrain(200, false, 'green', false);
+
+// Now you can test the behavior of train5, by calling, for example, the toggleLights() method, then the lightsStatus() method:
+train5.toggleLights(); // undefined
+train5.lightsStatus(); // Lights on? true
+
+// Here's the entire completed code for this lesson:
+class Train {
+    constructor(color, lightsOn) {
+        this.color = color;
+        this.lightsOn = lightsOn;
+    }
+    toggleLights() {
+        this.lightsOn = !this.lightsOn;
+    }
+    lightsStatus() {
+        console.log('Lights on?', this.lightsOn);
+    }
+    getSelf() {
+        console.log(this);
+    }
+    getPrototype() {
+        var proto = Object.getPrototypeOf(this);
+        console.log(proto);
+    }
+}
+
+class HighSpeedTrain extends Train {
+    constructor(passengers, highSpeedOn, color, lightsOn) {
+        super(color, lightsOn);
+        this.passengers = passengers;
+        this.highSpeedOn = highSpeedOn;
+    }
+    toggleHighSpeed() {
+        this.highSpeedOn = !this.highSpeedOn;
+        console.log('High speed status:', this.highSpeedOn);
+    }
+    toggleLights() {
+        super.toggleLights();
+        super.lightsStatus();
+        console.log('Lights are 100% operational.');
+    }
+}
+
+var myFirstTrain = new Train('red', false);
+console.log(myFirstTrain); // Train {color: 'red', lightsOn: false}
+var mySecondTrain = new Train('blue', false);
+var myThirdTrain = new Train('blue', false);
+
+var train4 = new Train('red', false);
+train4.toggleLights(); // undefined
+train4.lightsStatus(); // Lights on? true
+train4.getSelf(); // Train {color: 'red', lightsOn: true}
+train4.getPrototype(); // {constructor: f, toggleLights: f, ligthsStatus: f, getSelf: f, getPrototype: f}
+
+var train5 = new Train('blue', false);
+var highSpeed1 = new HighSpeedTrain(200, false, 'green', false);
+
+train5.toggleLights(); // undefined
+train5.lightsStatus(); // Lights on? true
+highSpeed1.toggleLights(); // Lights on? true, Lights are 100% operational.
+
+
+// Using class instance as another class' constructor's property
+// Consider the following example:
+class StationaryBike {
+    constructor(position, gears) {
+        this.position = position
+        this.gears = gears
+    }
+}
+
+class Treadmill {
+    constructor(position, modes) {
+        this.position = position
+        this.modes = modes
+    }
+}
+
+class Gym {
+    constructor(openHrs, stationaryBikePos, treadmillPos) {
+        this.openHrs = openHrs
+        this.stationaryBike = new StationaryBike(stationaryBikePos, 8)
+        this.treadmill = new Treadmill(treadmillPos, 5)
+    }
+}
+
+var boxingGym = new Gym("7-22", "right corner", "left corner")
+
+console.log(boxingGym.openHrs) //
+console.log(boxingGym.stationaryBike) //
+console.log(boxingGym.treadmill) //
+
+/*
+----> 7-22
+----> StationaryBike { position: 'right corner', gears: 8 }
+----> Treadmill { position: 'left corner', modes: 5 }
+*/
+
+/* 
+In this example, there are three classes defined: StationaryBike, Treadmill, and Gym.
+
+The StationaryBike class is coded so that its future object instance will have the position and gears properties. 
+The position property describes where the stationary bike will be placed inside the gym, and the gears propery gives the number of gears that that stationary bike should have.
+
+The Treadmill class also has a position, and another property, named modes (as in "exercise modes").
+
+The Gym class has three parameters in its constructor function: openHrs, stationaryBikePos, treadmillPos.
+
+This code allows me to instantiate a new instance object of the Gym class, and then when I inspect it, I get the following information:
+
+the openHrs property is equal to "7-22" (that is, 7am to 10pm)
+
+the stationaryBike property is an object of the StationaryBike type, containing two properties: position and gears
+
+the treadmill property is an object of the Treadmill type, containing two properties: position and modes
+*/
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

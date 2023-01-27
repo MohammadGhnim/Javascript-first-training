@@ -2299,4 +2299,65 @@ H speed
 H engine
 G speed: fast
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------                         Template literals examples                                   ---------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
+
+// Differences between a template and regular string
+// First, it allows for variable interpolation:
+let greet = "Hello";
+let place = "World";
+console.log(`${greet} ${place} !`) //display both variables using template literals
+//----> Hello World !
+
+
+//in ES5, the above example would have to be written as follows:  
+var greet = "Hello";
+var place = "World";
+console.log(greet + " " + place + "!"); //display both variables without using template literals
+
+//it's possible to perform arithmetic operation inside a template literal expression
+console.log(`${1 + 1 + 1 + 1 + 1} stars!`) 
+//---->  5 stars!
+
+
+// ES5 Strings
+
+let noMultiLine = "No mult-line strings in ES5";
+console.log("Did you know? " + noMultiLine);
+//----> Did you know? No mult-line strings in ES5
+
+// ES5 Strings
+//--------------------------------------------------------//
+let noMultiLine = "No
+mult-line strings in ES5";
+console.log("Did you know? " + noMultiLine);
+//----> SyntaxError: Invalid or unexpected token
+//--------------------------------------------------------//
+
+
+// ES6 Strings
+let multiline = `
+    Using ES6
+    backticks,
+    multi-line
+    strings are 
+    possible 
+`;
+
+console.log(multiline);
+/*----> 
+    Using ES6
+    backticks,
+    multi-line
+    strings are 
+    possible 
+*/
+
+
+let first = `He said, "Don't you Know ES6, It's got some great features!"`;
+let second = `"Wouldn't you want to learn more?", he asked.`;
+
+console.log(`${first} - and I got curios. ${second}`);
+// ----> He said, "Don't you Know ES6, It's got some great features!" - and I got curios. "Wouldn't you want to learn more?", he asked.
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------

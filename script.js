@@ -1086,6 +1086,7 @@ const keyword
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------                    Object-oriented-programming                         ----------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // group data = (oop)
 // seoarate data = (fp)
@@ -1195,6 +1196,7 @@ purchase2.totalPrice();
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------                     classes                          ----------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
 class Car {
     constructor(color, speed) {
         this.color = color;
@@ -1212,3 +1214,147 @@ car1.turboOn();
 
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------                       Object Oriented Programming principles                      ------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/*The Benefits of OOP:
+
+1- Allows you to write modular code,
+
+2- Makes your code more flexible and
+
+3- Makes your code reusable.
+
+
+The Principles of OOP:
+
+1- inheritance, 
+2- encapsulation, 
+3- abstraction,
+4- polymorphism
+*/
+
+class Animal {/* ... class code here... */}
+
+var myDog = Objrct.create(Animal)
+console.log(Animal)
+//----> [class Animal]
+
+
+class Animal {/* ... class code here... */}
+
+var myDog = new Animal()
+console.log(Animal)
+//----> [class Animal]
+
+/*
+1- OOP Principles: Inheritance
+t works like this: 
+
+There is a base class of a "thing".
+
+There is one or more sub-classes of "things" that inherit the properties of the base class (sometimes also referred to as the "super-class")
+
+There might be some other sub-sub-classes of "things" that inherit from those classes in point 2.
+
+*/
+class Animal { /* ...class code here... */ }
+class Bird extends Animal { /* ...class code here... */ }
+class Eagle extends Bird { /* ...class code here... */ }
+
+/*
+2- OOP Principles: Encapsulation
+In the simplest terms, encapsulation has to do with making a code implementation "hidden" from other users, 
+in the sense that they don't have to know how my code works in order to "consume" the code.
+ */
+"abc".toUpperCase();
+
+/*
+3- OOP Principles: Abstraction
+Abstraction is all about writing code in a way that will make it more generalized.
+
+* An abstraction is about extracting the concept of what you're trying to do, rather than dealing with a specific manifestation of that concept. 
+
+* Encapsulation is about you not having access to, or not being concerned with, how some implementation works internally.
+*/
+
+
+/*
+OOP Principles: Polymorphism
+Polymorphism is a word derived from the Greek language meaning "multiple forms". 
+An alternative translation might be: "something that can take on many shapes".
+
+* A door has a bell. It could be said that the bell is a property of the door object. 
+This bell can be rung. When would someone ring a bell on the door? Obviously, to get someone to show up at the door.
+
+* Now consider a bell on a bicycle. A bicycle has a bell. It could be said that the bell is a property of the bicycle object. This bell could also be rung. 
+However, the reason, the intention, and the result of somebody ringing the bell on a bicycle is not the same as ringing the bell on a door.
+*/
+
+const bicycle = {
+    bell: function() {
+        return "Ring, ring! Watch out, please!"
+    }
+}
+const door = {
+    bell: function() {
+        return "Ring, ring! Come here, please!"
+    }
+}
+
+// So, I can access the bell() method on the bicycle object, using the following syntax: 
+bicycle.bell(); // "Get away, please"
+
+// I can also access the bell() method on the door object, using this syntax:  
+door.bell(); // "Come here, please"
+
+//Now, to make this code truly polymorphic, I will add another function declaration:
+function ringTheBell(thing) {
+    console.log(thing.bell())
+}
+
+/*Now I have declared a ringTheBell() function. It accepts a thing parameter - which I expect to be an object, namely, either the bicycle object or the door object.
+
+So now, if I call the ringTheBell() function and pass it the bicycle as its single argument, here's the output:*/
+ringTheBell(bicycle); // Ring, ring! Watch out, please!
+
+/* However, if I invoke the ringTheBell() function and pass it the door object, I'll get the following output: */
+ringTheBell(door); // "Ring, ring! Come here, please!"
+
+
+/* Here's another example,the concatenation operator, used by calling the built-in concat() method.
+
+If I use the concat() method on two strings, it behaves exactly the same as if I used the + operator. */
+"abc".concat("def"); // 'abcdef'
+
+//I can also use the concat() method on two arrays. Here's the result: 
+["abc"].concat(["def"]); // ['abc', 'def']
+
+//Consider using the + operator on two arrays with one member each:  
+["abc"] + ["def"]; // ["abcdef"]
+
+
+// Here's an example of polymorphism using classes in JavaScript:
+class Bird {
+    useWings() {
+        console.log("Flying!")
+    }
+}
+class Eagle extends Bird {
+    useWings() {
+        super.useWings()
+        console.log("Barely flapping!")
+    }
+}
+class Penguin extends Bird {
+    useWings() {
+        console.log("Diving!")
+    }
+}
+var baldEagle = new Eagle();
+var kingPenguin = new Penguin();
+baldEagle.useWings(); // "Flying! Barely flapping!"
+kingPenguin.useWings(); // "Diving!"
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
